@@ -13,7 +13,7 @@ Live version: https://ewastasiak.github.io/fend-project-memory-game-master/
 
 
 ## Project by:
-* Ewa Stasiak:
+* Ewa Stasiak
 
 ## License:
 * MIT
