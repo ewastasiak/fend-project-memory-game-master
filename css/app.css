@@ -1,0 +1,380 @@
+html {
+    background: black;
+
+
+
+    box-sizing: border-box;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: 'Coda', cursive;
+}
+
+footer {
+  color: grey;
+  font-family: 'Coda';
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 1em;
+}
+
+a {
+  color: #ACE;
+  text-decoration: none;
+}
+/* main {
+  min-height: 50%;
+  max-width: 80%;
+   max-width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+
+} */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Poor Story', sans-serif;
+    /* font-family: 'Tangerine', cursive; */
+    color: #FB4; /*#96C;*/
+    font-weight: 500;
+    font-size: 3.5em;
+}
+
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    max-width: 90%;
+    width: 660px;
+    min-height: 680px;
+
+  /*  background: linear-gradient(190deg, #96C 0%, #FB4 100%);*/
+    background: linear-gradient(130deg, #FB4 0%, #ACE 70%);
+
+
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 7px 9px 11px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-flow: row wrap;
+    /* justify-content: space-between; */
+    justify-content: space-around;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 1em 0 3em;
+
+}
+
+.deck .card {
+    height: 120px;
+    width: 120px;
+    margin: 3px;
+    /* background: #5F5346; */
+background: #5F5346 url("img/1big.png") no-repeat center;
+
+/* background-position: bottom; */
+
+     /*#2e3d49;*/
+/*    background: linear-gradient(180deg, #fff 0%, #5F5346 10%);*/
+    font-size: 0;
+    color: 	white;
+    border-radius: 7px;
+    border-style: solid;
+    border-color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(17,51,84,1);
+}  /*46, 61, 73, 0.5*/
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #000;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+    transform:rotate(-5deg);
+-ms-transform:rotate(-5deg);
+-webkit-transform:rotate(-5deg);
+}
+
+
+@keyframes yay {
+    0%   {background-color: #ACE;}
+    50%  {background-color: #FB4;}
+}
+
+
+.deck .card.match {
+    cursor: default;
+    background: #036;
+    animation-name: yay;
+    animation-duration: 1s;
+    font-size: 33px;
+    transform:rotate(0deg);
+-ms-transform:rotate(0deg);
+-webkit-transform:rotate(0deg);
+
+}
+
+/* TODO:The animation code add class in JS*/
+
+@keyframes nay {
+    0%   {background-color: #FB4;}
+    25%  {background-color: red;}
+}
+/* The element to apply the animation to */
+.deck.card.wrong,
+.deck.card.nope {
+
+    cursor: default;
+    background-color: red;
+    animation-name: nay;
+    animation-duration: 4s;
+    font-size: 33px;
+    transform:rotate(0deg);
+-ms-transform:rotate(0deg);
+-webkit-transform:rotate(0deg);
+}
+
+
+.fa {
+  font-size: 160%;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    color: #FB4;
+    font-size: 1.5em;
+    width: 345px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+/* .score-panel .restart {
+    float: right;
+    cursor: pointer;
+} */
+
+.score-panel .icons {
+    float: right;
+    cursor: pointer;
+}
+
+
+/* TODO: toggle sound function*/
+/* .fa-volume-up,
+.fa-volume-off {
+  margin-left: 40px;
+  } */
+
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+
+
+/*
+* MODAL based on https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
+*
+*TODO: poprawić wsjo
+
+*/
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    align-items: center;
+    background: linear-gradient(130deg, #ACE 0%, #FB4 70%);
+    box-shadow: 0 0 20px 5px #ACE;
+    font-family: 'Poor Story', sans-serif;
+    color: #000;
+    font-weight: 800;
+    font-size: 1.5em;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    border: 3px solid white;
+    border-radius: 10px;
+    width: 55%;
+}
+
+/* The Close Button */
+.close {
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: #FFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+  background-color: white;
+  font: inherit;
+  padding: 20px 16px;
+}
+
+
+
+
+
+
+
+
+
+/*
+* responsive
+*
+*TODO: set breakpoint that works for landscape mode
+
+*/
+
+     @media screen and (max-width: 560px) {
+
+       h1 {
+           font-family: 'Poor Story', sans-serif;
+           color: #FFF; /*#96C;*/
+           font-weight: 500;
+           font-size: 2em;
+       }
+
+       /* .container {
+         width: 100%;
+         max-height: 100%;
+       } */
+
+       .deck {
+          min-width: 340px;
+           max-width: 360px;
+           min-height: 340px;
+           max-height: 360px;
+           margin: auto;
+       }
+
+       .deck .card {
+           height: 60px;
+           width: 60px;
+           margin-bottom: 7px;
+           /* background: #5F5346; */
+           background: #5F5346 url("img/1small.png") no-repeat center;
+           font-size: 0;
+           color: 	white;
+           border-radius: 4px;
+           border: 2px;
+           border-style: solid;
+           border-color: white;
+           cursor: pointer;
+           display: flex;
+           /* justify-content: space-around; */
+           /* align-items: center; */
+           box-shadow: 5px 2px 20px 0 rgba(17,51,84,1);
+       }  /*46, 61, 73, 0.5*/
+
+       .fa {
+         font-size: 100%;
+       }
+
+     }
+
+
+      @media screen and (min-width: 561px) and (max-width: 650px) {
+
+        h1 {
+            color: #ACE;
+        }
+
+        .deck .card {
+            height: 90px;
+            width: 90px;
+            margin: 5px;
+            background: #5F5346 url("img/1medium.png") no-repeat center;
+
+          }
+
+            .deck {
+               min-width: 380px;
+                max-width: 450px;
+                min-height: 380px;
+                max-height: 450px;
+                box-sizing: content-box;
+
+     }
+}
+/*
+     @media screen and (min-width: 700px) {
+       .figure-flexbox {
+         display: flex;
+         justify-content: space-around;
+         flex-flow: row wrap;
+       }
+
+       .featured-box {
+       width: 600px;
+      }
+
+     } */
