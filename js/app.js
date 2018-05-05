@@ -31,24 +31,6 @@ function playAudio() {
 
 function setup() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   const deckRef = document.getElementsByClassName("deck")[0];
 
   // create an array of cards
@@ -119,12 +101,12 @@ function setup() {
   //Open a card on click
   const cardsObjs = deckRef.children;
   for (let i = 0; i < cardsObjs.length; i++) {
-    // add event listener, later it needs to be removed (after opening) and added back if cards did not match
+  // add event listeners to cards
     cardsObjs[i].addEventListener("click", isOpen);
   }
 
   function isOpen() {
-    //If two cards open - do nothing (idea: @Kepelrs)
+    //If two cards already open - do nothing (idea: @Kepelrs)
     if (openCardArr.length === 2) {
       return;
     }
@@ -133,6 +115,7 @@ function setup() {
     this.classList.add("show", "open");
     openCardArr.push(this);
 
+    //Compare a pair of cards
     if (openCardArr.length === 2) {
       setTimeout(function() {
         comparePair();
@@ -148,13 +131,13 @@ function setup() {
       matchedCardArr.push("card.li");
       console.log(matchedCardArr);
     }
+
     if (matchedCardArr.length === 16) {
       setTimeout(function() {
         endOfGame();
       }, 700);
     }
   }
-
 
   function comparePair() {
     let compareArr = openCardArr;
@@ -166,28 +149,10 @@ function setup() {
      // console.log("compared cards are not the same");
       let cardsClassOut = compareArr;
 
-      // // This is too complicated, srsly
-      //       for (let i = 0; i < compareArr.length; i++) {
-      //         let compareArr = cardsClassOut[i];
-      //
-      // 						function isWrong() {
-      // 						 cardsClassOut[i].classList.add("nope");
-      // 					 }
-      // 						 isWrong();
-      //
-      // 						function nope() {
-      // 							cardsObjs[i].classList.add("nope");
-      // 											}
-      //
-      // 						if (cardsObjs[0].classList.contains("wrong") && cardsObjs[1].classList.contains("wrong")) {
-      // 							nope();
-      // 						}
-      //removeclasses
       for (let i = 0; i < compareArr.length; i++) {
         let compareArr = cardsClassOut[i];
 
         cardsClassOut[i].classList.remove("show", "open");
-
      //   console.log("remove the class");
       }
     }
@@ -196,41 +161,26 @@ function setup() {
     compareArr.splice(0, 2);
   }
 
-
-
-
-
-
-
-
-
-
-
-  //Repeat/play-again Button SEEMS TO WORK
+  // Repeat/play-again button
   const repeatFaIcon = document.getElementsByClassName("fa-repeat");
   repeatFaIcon[0].addEventListener("click", resetGame);
 
-  //Replay button in the modal
+  // Replay button in the modal
   const replayBtn = document.getElementsByTagName("button")[0];
-  // replayBtn.addEventListener('click', resetGame);
   replayBtn.onclick = function() {
     resetGame();
   };
-  //if modal.style.display = "visible";
 
-  //Moves
+  //Moves and rating
   function movesFunc() {
     movesNum++;
     movesRef.innerHTML++;
-    // let starsCount = 3;
-
 
     // Get stars
-    // const starOne = document.getElementById('star-one');
     const starTwo = document.getElementById('star-two');
     const starThree = document.getElementById('star-three');
 
-    // Star rating change
+    // Rating change
     if (movesNum > 15) {
       starThree.className = 'fa fa-star-o';
     }
@@ -238,8 +188,6 @@ function setup() {
     if (movesNum > 23) {
       starTwo.className = 'fa fa-star-o';
     }
-
-
   }
 
   // TODO: reset everything
@@ -247,7 +195,7 @@ function setup() {
     modal.style.display = "none";
     deckRef.innerHTML = "";
     setup();
-    // classList.remove("show", "open");
+
     //reset Array
     let openCardArr = [];
     let matchedCardArr = [];
@@ -255,10 +203,7 @@ function setup() {
     movesNum = 0;
     movesRef.innerHTML = 0;
 
-    //clear the deckRef
-    //	deckRef.removeChild
-
-    //TODO: star rating and timer; function setup? or restartDeck
+    //TODO:  timer
   }
 
   function endOfGame() {
@@ -271,13 +216,12 @@ function setup() {
   //TODO: leaderboard modal
   // Get the modal
   const modal = document.getElementById("myModal");
-  // Get the <span> element that closes the modal
+  // Get the element that closes the modal and close on click
   const closeModal = document.getElementsByClassName("close")[0];
-  // When the user clicks on <span> (x), close the modal
   closeModal.onclick = function() {
     modal.style.display = "none";
   };
-  // When the user clicks anywhere outside of the modal, close it
+  // Close the modal when user clicks outside of it
   window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
@@ -286,28 +230,7 @@ function setup() {
 
   //MODAL CONTENT
   const modalContents = document.getElementsByClassName("modal-content")[0];
-
   const modalText = modalContents.children.getElementsByTagName("p");
-
   modalText[0].innerHTML = `<p>${movesNum}</p>`;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
