@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", setup);
 
+
 // Music
 const audio = new Audio("sfx/elevator-monroe-kopcinski.mp3");
 
@@ -26,6 +27,25 @@ function pauseAudio() {
 }
 
 function setup() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   const deckRef = document.getElementsByClassName("deck")[0];
 
   // create an array of cards
@@ -173,6 +193,16 @@ function setup() {
     compareArr.splice(0, 2);
   }
 
+
+
+
+
+
+
+
+
+
+
   //Repeat/play-again Button SEEMS TO WORK
   const repeatFaIcon = document.getElementsByClassName("fa-repeat");
   repeatFaIcon[0].addEventListener("click", resetGame);
@@ -189,6 +219,24 @@ function setup() {
   function movesFunc() {
     movesNum++;
     movesRef.innerHTML++;
+    // let starsCount = 3;
+
+
+    // Get stars
+    // const starOne = document.getElementById('star-one');
+    const starTwo = document.getElementById('star-two');
+    const starThree = document.getElementById('star-three');
+
+    // Star rating change
+    if (movesNum > 15) {
+      starThree.className = 'fa fa-star-o';
+    }
+
+    if (movesNum > 23) {
+      starTwo.className = 'fa fa-star-o';
+    }
+
+
   }
 
   // TODO: reset everything
@@ -240,4 +288,24 @@ function setup() {
   const modalText = modalContents.children.getElementsByTagName("p");
 
   modalText[0].innerHTML = `<p>${movesNum}</p>`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
