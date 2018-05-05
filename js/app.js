@@ -16,15 +16,17 @@ const soundIcon = document.getElementById("sound");
 // 	}
 // 	soundIcon.onclick = function {}
 // 	toggleAudio();
+// function pauseAudio() {
+//   audio.pause();
+// }
+
 
 function playAudio() {
   audio.loop = true;
   audio.play();
 }
 
-function pauseAudio() {
-  audio.pause();
-}
+
 
 function setup() {
 
@@ -260,7 +262,6 @@ function setup() {
 
   function endOfGame() {
     modal.style.display = "block";
-    pauseAudio();
     //TODO:
     // haltTimer();
   }
