@@ -9,6 +9,10 @@ document.querySelector("body").addEventListener("click", playAudio);
 
 const soundIcon = document.getElementById("sound");
 
+// Get stars
+const starTwo = document.getElementById('star-two');
+const starThree = document.getElementById('star-three');
+
 //TODO: make this work
 // 	function toggleAudio() {
 // 		if (playAudio()) {
@@ -176,10 +180,6 @@ function setup() {
     movesNum++;
     movesRef.innerHTML++;
 
-    // Get stars
-    const starTwo = document.getElementById('star-two');
-    const starThree = document.getElementById('star-three');
-
     // Rating change
     if (movesNum > 15) {
       starThree.className = 'fa fa-star-o';
@@ -194,6 +194,10 @@ function setup() {
   function resetGame() {
     modal.style.display = "none";
     deckRef.innerHTML = "";
+
+    starThree.className = 'fa fa-star';
+    starTwo.className = 'fa fa-star';
+
     setup();
 
     //reset Array
