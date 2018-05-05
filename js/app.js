@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", setup);
 
 // Music
 const audio = new Audio("sfx/elevator-monroe-kopcinski.mp3");
+audio.volume = 0.2;
 
 document.querySelector("body").addEventListener("click", playAudio);
 
