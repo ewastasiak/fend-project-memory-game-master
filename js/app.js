@@ -64,8 +64,10 @@ function setup() {
   let matchedCardArr = [];
 
   const movesRef = document.getElementsByClassName("moves")[0];
+  const movesWord = document.getElementById("word");
   let movesNum = 0;
   movesRef.innerHTML = 0;
+  movesWord.innerHTML = ` moves`;
 
   //create list elements and icons, assign classes to them
   function makeList() {
@@ -183,6 +185,15 @@ function setup() {
     movesRef.innerHTML++;
     modalRating.innerHTML = `<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>`
 
+    if (movesNum === 1) {
+    movesWord.innerHTML = " move";
+    }
+
+    if (movesNum === 2) {
+      movesRef.innerHTML = 2;
+      movesWord.innerHTML = " moves";
+
+    }
     // Rating change
     if (movesNum > 15) {
       starThree.className = 'fa fa-star-o';
