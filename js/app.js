@@ -206,6 +206,11 @@ function setup() {
     }
   }
 
+    //MODAL CONTENT
+    const modalMoves = document.getElementById("moves");
+    const modalTime = document.getElementById("time");
+    const modalRating = document.getElementById("rating");
+
   // TODO: reset everything
   function resetGame() {
     modal.style.display = "none";
@@ -251,10 +256,5 @@ function setup() {
     }
   };
 
-  //MODAL CONTENT
-  // const modalContents = document.getElementsByClassName("modal-content")[0];
-  const modalMoves = document.getElementById("moves");
-  const modalTime = document.getElementById("time");
-  const modalRating = document.getElementById("rating");
 
 }
