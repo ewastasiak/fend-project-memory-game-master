@@ -228,6 +228,9 @@ function setup() {
 
   function endOfGame() {
     modal.style.display = "block";
+    const finalMovesNum = movesNum;
+    modalMoves.innerHTML = `It took you ${finalMovesNum} moves`;
+
     //TODO:
     // haltTimer();
   }
