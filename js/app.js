@@ -13,6 +13,8 @@ const soundIcon = document.getElementById("sound");
 const starTwo = document.getElementById('star-two');
 const starThree = document.getElementById('star-three');
 
+
+
 //TODO: make this work
 // 	function toggleAudio() {
 // 		if (playAudio()) {
@@ -175,18 +177,21 @@ function setup() {
     resetGame();
   };
 
-  //Moves and rating
+  //Moves and rating (board and modal)
   function movesFunc() {
     movesNum++;
     movesRef.innerHTML++;
+    modalRating.innerHTML = `<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>`
 
     // Rating change
     if (movesNum > 15) {
       starThree.className = 'fa fa-star-o';
+      modalRating.innerHTML = `<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>`
     }
 
     if (movesNum > 23) {
       starTwo.className = 'fa fa-star-o';
+      modalRating.innerHTML = `<i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>`
     }
   }
 
@@ -204,8 +209,8 @@ function setup() {
     let openCardArr = [];
     let matchedCardArr = [];
     //moves
-    movesNum = 0;
-    movesRef.innerHTML = 0;
+    // movesNum = 0;
+    // movesRef.innerHTML = 0;
 
     //TODO:  timer
   }
@@ -233,8 +238,9 @@ function setup() {
   };
 
   //MODAL CONTENT
-  const modalContents = document.getElementsByClassName("modal-content")[0];
-  const modalText = modalContents.children.getElementsByTagName("p");
-  modalText[0].innerHTML = `<p>${movesNum}</p>`;
+  // const modalContents = document.getElementsByClassName("modal-content")[0];
+  const modalMoves = document.getElementById("moves");
+  const modalTime = document.getElementById("time");
+  const modalRating = document.getElementById("rating");
 
 }
