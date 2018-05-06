@@ -12,6 +12,8 @@
 </head>
 <body>
     <main>
+      <div id="timer"><p><span id="mins">00</span>:<span id="secs">00</span></p></div>
+
     <div class="container">
         <header>
             <h1>Matching Game</h1>
@@ -34,6 +36,7 @@
         </section>
 
         <ul class="deck">
+
         <!--    <li class="card">
                 <i class="fa fa-diamond"></i>
             </li>
@@ -83,7 +86,9 @@
                 <i class="fa fa-cube"></i>
             </li> -->
         </ul>
+
     </div>
+
   </main>
   <footer><p>Background music:<br> "Elevator Ride to Hell" by <a href="https://www.youtube.com/channel/UCUXP3jvTKjDt6bL1t-fca1Q" target="_blank">Adam Monroe</a> and Adam Kopciński</p></footer>
 
@@ -102,8 +107,8 @@
  <div class="modal-content">
     <span class="close">&times;</span>
     <h2>You matched them all!</h2>
-    <p id="moves">PLACEHOLDER-Moves count:</p>
-    <p id="time">PLACEHOLDER-Time elapsed:</p>
+    <p id="moves"></p>
+    <p id="time"></p>
     <p id="rating"></p>
     <button>Replay?</button>
   </div>

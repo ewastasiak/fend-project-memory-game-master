@@ -6,12 +6,12 @@ const audio = new Audio("sfx/elevator-monroe-kopcinski.mp3");
 audio.volume = 0.2;
 
 document.querySelector("body").addEventListener("click", playAudio);
-
 const soundIcon = document.getElementById("sound");
 
 // Get stars
 const starTwo = document.getElementById('star-two');
 const starThree = document.getElementById('star-three');
+
 
 
 
@@ -113,7 +113,49 @@ function setup() {
     cardsObjs[i].addEventListener("click", isOpen);
   }
 
+
+
+  //timer
+  let firstClick = true;
+  let timer = document.getElementById('timer');
+  let seconds = document.getElementById('secs');
+  let minutes = document.getElementById('mins');
+  let time;
+
+
+  // timer.innerHTML = `${stringMins} :000 ${stringSec}`;
+  // timer.innerHTML = 0;
+  // timer.innerHTML = `${minutes.innerHTML}:${seconds.innerHTML}`;
+
+  // seconds.innerHTML = 00;
+  // minutes.innerHTML = 00;
+
+
+
+  // let stringSec = seconds.toString();
+  // let stringMins = minutes.toString();
+  // let timeToString = `${stringMins}:${stringSec}`;
+  // let timer = timeToString;
+
+
+//timer
+  function timeCount() {
+  time = setInterval(function() {
+    seconds.innerHTML++;
+  if (seconds.innerHTML == 60) {
+    minutes.innerHTML++;
+    seconds.innerHTML = 0;
+  }
+  }, 1000);
+  }
+
+
+
   function isOpen() {
+    if (firstClick === true) {
+      timeCount();
+      firstClick = false;
+    }
     //If two cards already open - do nothing (idea: @Kepelrs)
     if (openCardArr.length === 2) {
       return;
@@ -215,7 +257,7 @@ function setup() {
   function resetGame() {
     modal.style.display = "none";
     deckRef.innerHTML = "";
-
+    let time = 0;
     starThree.className = 'fa fa-star';
     starTwo.className = 'fa fa-star';
 
@@ -235,9 +277,19 @@ function setup() {
     modal.style.display = "block";
     const finalMovesNum = movesNum;
     modalMoves.innerHTML = `It took you ${finalMovesNum} moves`;
-
+    const finalTime = time;
+    modalTime.innerHTML = `Your time was ${finalTime}`;
+     //????????????
     //TODO:
     // haltTimer();
+
+    function timeCountStop() {
+
+    clearInterval(time);
+    }
+
+    timeCountStop();
+
   }
 
   // template taken from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal

@@ -38,6 +38,11 @@ a {
   color: #ACE;
   text-decoration: none;
 }
+
+
+p {
+  margin: 0;
+}
 /* main {
   min-height: 50%;
   max-width: 80%;
@@ -63,7 +68,16 @@ h1 {
     font-size: 3.5em;
 }
 
-
+#timer {
+margin: 0.3em 0.2em;
+font-family: 'Poor Story', sans-serif;
+font-size: 1.8em;
+color: grey;
+position: fixed;
+right: 0px;
+text-align: left;
+display: inline-block;
+}
 /*
  * Styles for the deck of cards
  */
@@ -86,7 +100,7 @@ h1 {
     justify-content: space-around;
     /* justify-content: center; */
     align-items: center;
-    margin: 1em 0 3em;
+    margin: 1em 0;
 
 }
 
