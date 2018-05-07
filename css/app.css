@@ -36,7 +36,7 @@ footer {
 }
 
 a {
-  color: #ACE;
+  color: #ace;
   text-decoration: none;
 }
 
@@ -46,7 +46,7 @@ p {
 
 h1 {
   font-family: 'Poor Story', sans-serif;
-  color: #FB4;
+  color: #fb4;
   font-weight: 500;
   font-size: 3.5em;
 }
@@ -82,7 +82,7 @@ h2 {
   max-width: 90%;
   width: 660px;
   min-height: 680px;
-  background: linear-gradient(130deg, #FB4 0%, #ACE 70%);
+  background: linear-gradient(130deg, #fb4 0%, #ace 70%);
   padding: 32px;
   border-radius: 10px;
   box-shadow: 7px 9px 11px 0 rgba(46, 61, 73, 0.5);
@@ -97,7 +97,7 @@ h2 {
   height: 120px;
   width: 120px;
   margin: 3px;
-  background: #5F5346 url("img/1big.png") no-repeat center;
+  background: #5f5346 url("img/1big.png") no-repeat center;
   font-size: 0;
   color: 	white;
   border-radius: 7px;
@@ -126,8 +126,8 @@ h2 {
 
 
 @keyframes yay {
-  0%   {background-color: #ACE;}
-  50%  {background-color: #FB4;}
+  0%   {background-color: #ace;}
+  50%  {background-color: #fb4;}
 }
 
 
@@ -145,7 +145,7 @@ h2 {
 
 /* TODO:The animation in JS*/
 @keyframes nay {
-  0%   {background-color: #FB4;}
+  0%   {background-color: #fb4;}
   25%  {background-color: red;}
 }
 
@@ -171,7 +171,7 @@ h2 {
  */
 .score-panel {
   text-align: left;
-  color: #FB4;
+  color: #fb4;
   font-size: 1.5em;
   width: 345px;
   margin-bottom: 10px;
@@ -232,8 +232,8 @@ h2 {
 /* Modal Content */
 .modal-content {
   align-items: center;
-  background: linear-gradient(130deg, #ACE 0%, #FB4 70%);
-  box-shadow: 0 0 20px 5px #ACE;
+  background: linear-gradient(130deg, #ace 0%, #fb4 70%);
+  box-shadow: 0 0 20px 5px #ace;
   font-family: 'Poor Story', sans-serif;
   color: #000;
   font-weight: 800;
@@ -257,7 +257,7 @@ h2 {
 
 .close:hover,
 .close:focus {
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
 }
@@ -272,7 +272,7 @@ h2 {
 
    h1 {
      font-family: 'Poor Story', sans-serif;
-     color: #FFF;
+     color: #fff;
      font-weight: 500;
      font-size: 2em;
    }
@@ -289,7 +289,7 @@ h2 {
      height: 60px;
      width: 60px;
      margin-bottom: 7px;
-     background: #5F5346 url("img/1small.png") no-repeat center;
+     background: #5f5346 url("img/1small.png") no-repeat center;
      font-size: 0;
      color: white;
      border-radius: 4px;
@@ -314,14 +314,14 @@ h2 {
 @media screen and (min-width: 561px) and (max-width: 650px) {
 
   h1 {
-      color: #ACE;
+      color: #ace;
   }
 
   .deck .card {
     height: 90px;
     width: 90px;
     margin: 5px;
-    background: #5F5346 url("img/1medium.png") no-repeat center;
+    background: #5f5346 url("img/1medium.png") no-repeat center;
     }
 
   .deck {
