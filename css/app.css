@@ -184,7 +184,7 @@ h2 {
   display: inline-block;
 }
 
-.score-panel .stars li {
+.score-panel .stars .list-stars {
   list-style: none;
   display: inline-block;
 }
