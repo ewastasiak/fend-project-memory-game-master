@@ -18,7 +18,7 @@ Live version: https://ewastasiak.github.io/fend-project-memory-game-master/
 <a href="https://github.com/ewastasiak/fend-project-memory-game-master/blob/master/LICENSE">MIT</a>
 
 ## TODO-s and known issues:
-1. Toggle sound
-2. Leaderboard
-3. The game doesn't resize to fit the landscape mode on smaller devices.
-4. For now the game is unplayable on Internet Explorer.
+1. Add toggle sound.
+2. Add leaderboard.
+3. Add landscape mode breakpoint for smaller devices.
+4. Fix Internet Explorer issues.
