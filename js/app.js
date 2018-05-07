@@ -181,13 +181,19 @@ function setup() {
   }
 
   // Repeat/play-again button
-  const repeatFaIcon = document.getElementsByClassName("fa-repeat");
-  repeatFaIcon[0].addEventListener("click", resetGame);
+  const repeatFaIcon = document.getElementsByClassName("fa-repeat")[0];
+  // repeatFaIcon[0].addEventListener("click", resetGame);
+  repeatFaIcon.onclick = function() {
+    timeCountStop();
+    resetGame();
+  }
+
 
   // Replay button in the modal
   const replayBtn = document.getElementsByTagName("button")[0];
   replayBtn.onclick = function() {
     resetGame();
+
   };
 
   //Moves and rating (board and modal)
@@ -235,15 +241,15 @@ function setup() {
     let matchedCardArr = [];
   }
 
+  function timeCountStop() {
+    clearInterval(timer);
+    seconds.innerHTML = 0;
+    minutes.innerHTML = 0;
+  }
+
   function endOfGame() {
     let finalMin = minutes.innerHTML;
     let finalSec = seconds.innerHTML;
-
-    function timeCountStop() {
-      clearInterval(timer);
-      seconds.innerHTML = 0;
-      minutes.innerHTML = 0;
-    }
 
     timeCountStop();
 
