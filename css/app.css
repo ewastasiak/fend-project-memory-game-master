@@ -241,7 +241,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 /* The Modal (background) */
 .modal {
-    display: none;
+    /* display: none; */
+    display: block;
     /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -269,7 +270,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     padding: 20px;
     border: 3px solid white;
     border-radius: 10px;
-    width: 55%;
+    width: 600px;
 }
 
 /* The Close Button */
@@ -354,6 +355,11 @@ button {
          font-size: 100%;
        }
 
+
+       .modal-content {
+         width: 300px;
+       }
+
      }
 
 
@@ -378,6 +384,10 @@ button {
                 max-height: 450px;
                 box-sizing: content-box;
 
+     }
+
+     .modal-content {
+       width: 400px;
      }
 }
 /*
