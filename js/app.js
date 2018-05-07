@@ -34,11 +34,47 @@ function playAudio() {
 }
 
 
+  //timer
+
+  let timer = document.getElementById('timer');
+  let seconds = document.getElementById('secs');
+  let minutes = document.getElementById('mins');
+  let timeSec = seconds;
+  let timeMin = minutes;
+  // let time = 0;
+
+
+
+  // timer.innerHTML = `${stringMins} :000 ${stringSec}`;
+  // timer.innerHTML = 0;
+  // timer.innerHTML = `${minutes.innerHTML}:${seconds.innerHTML}`;
+
+  // seconds.innerHTML = 00;
+  // minutes.innerHTML = 00;
+
+
+
+  // let stringSec = seconds.toString();
+  // let stringMins = minutes.toString();
+  // let timeToString = `${stringMins}:${stringSec}`;
+  // let timer = timeToString;
+
+
+//timer
+  function timeCount() {
+  timer = setInterval(function() {
+    seconds.innerHTML++;
+  if (seconds.innerHTML == 60) {
+    minutes.innerHTML++;
+    seconds.innerHTML = 0;
+  }
+  }, 1000);
+  }
 
 function setup() {
 
   const deckRef = document.getElementsByClassName("deck")[0];
-
+  let firstClick = true;
   // create an array of cards
   let cardsArr = [
     "fa fa-diamond",
@@ -115,41 +151,6 @@ function setup() {
 
 
 
-  //timer
-  let firstClick = true;
-  let timer = document.getElementById('timer');
-  let seconds = document.getElementById('secs');
-  let minutes = document.getElementById('mins');
-  let timeSec = seconds;
-  let timeMin = minutes;
-
-
-
-  // timer.innerHTML = `${stringMins} :000 ${stringSec}`;
-  // timer.innerHTML = 0;
-  // timer.innerHTML = `${minutes.innerHTML}:${seconds.innerHTML}`;
-
-  // seconds.innerHTML = 00;
-  // minutes.innerHTML = 00;
-
-
-
-  // let stringSec = seconds.toString();
-  // let stringMins = minutes.toString();
-  // let timeToString = `${stringMins}:${stringSec}`;
-  // let timer = timeToString;
-
-
-//timer
-  function timeCount() {
-  time = setInterval(function() {
-    seconds.innerHTML++;
-  if (seconds.innerHTML == 60) {
-    minutes.innerHTML++;
-    seconds.innerHTML = 0;
-  }
-  }, 1000);
-  }
 
 
 
@@ -259,7 +260,6 @@ function setup() {
   function resetGame() {
     modal.style.display = "none";
     deckRef.innerHTML = "";
-    let time = 0;
     starThree.className = 'fa fa-star';
     starTwo.className = 'fa fa-star';
 
@@ -276,23 +276,31 @@ function setup() {
   }
 
   function endOfGame() {
-    modal.style.display = "block";
-    const finalMovesNum = movesNum;
-    modalMoves.innerHTML = `It took you ${finalMovesNum} moves`;
-    const finalTime = time;
-    modalTime.innerHTML = `Your time was ${finalTime}`;
-     //????????????
-    //TODO:
-    // haltTimer();
+
+let finalMin = minutes.innerHTML;
+let finalSec = seconds.innerHTML;
 
     function timeCountStop() {
-    clearInterval(time);
-    let time = 0;
-    let timeSec = 0;
-    let timeMin = 0;
+    clearInterval(timer);
+
+seconds.innerHTML = 0;
+minutes.innerHTML = 0;
     }
 
     timeCountStop();
+
+
+
+    modal.style.display = "block";
+    const finalMovesNum = movesNum;
+    modalMoves.innerHTML = `It took you ${finalMovesNum} moves`;
+    const finalTime = `${finalMin}:${finalSec}`;
+    modalTime.innerHTML = `Your time was ${finalTime}`;
+
+    //TODO:
+    // haltTimer();
+
+
 
   }
 
