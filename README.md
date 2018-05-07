@@ -11,10 +11,6 @@ Live version: https://ewastasiak.github.io/fend-project-memory-game-master/
 * When the game is finished, a modal window will appear. It will contain the time it took you to complete the game, the number of moves you made and the rating.
 * You may choose to continue playing by clicking the "Replay" button.
 
-
-## Project by:
-* Ewa Stasiak
-
 ## Background music:
 <a href="https://www.youtube.com/watch?v=tpz21UFG0Ko">"Elevator Ride to Hell"</a> by Adam Monroe and Adam Kopciński
 
