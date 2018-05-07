@@ -187,6 +187,7 @@ h2 {
 .score-panel .stars li {
   list-style: none;
   display: inline-block;
+  margin: 1em;
 }
 
 /* .score-panel .restart {
@@ -214,7 +215,7 @@ h2 {
 
     /* The Modal (background) */
 .modal {
-    /* display: none; */
+  /* display: none; */
   display: block;
   /* Hidden by default */
   position: fixed; /* Stay in place */

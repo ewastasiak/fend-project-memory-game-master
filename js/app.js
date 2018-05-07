@@ -228,7 +228,7 @@ function setup() {
   function movesFunc() {
     movesNum++;
     movesRef.innerHTML++;
-    modalRating.innerHTML = `<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>`
+    modalRating.innerHTML = `<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>`;
 
     if (movesNum === 1) {
     movesWord.innerHTML = " move";
@@ -242,12 +242,12 @@ function setup() {
     // Rating change
     if (movesNum > 15) {
       starThree.className = 'fa fa-star-o';
-      modalRating.innerHTML = `<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>`
+      modalRating.innerHTML = `<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>`;
     }
 
     if (movesNum > 23) {
       starTwo.className = 'fa fa-star-o';
-      modalRating.innerHTML = `<i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>`
+      modalRating.innerHTML = `<i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>`;
     }
   }
 
