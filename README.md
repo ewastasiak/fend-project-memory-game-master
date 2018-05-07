@@ -15,12 +15,14 @@ Live version: https://ewastasiak.github.io/fend-project-memory-game-master/
 ## Project by:
 * Ewa Stasiak
 
-## License:
-* MIT
+## Background music:
+<a href="https://www.youtube.com/watch?v=tpz21UFG0Ko">"Elevator Ride to Hell"</a> by Adam Monroe and Adam Kopciński
 
-## TODO-s:
+## License:
+* <a href="https://github.com/ewastasiak/fend-project-memory-game-master/blob/master/LICENSE">MIT</a>
+
+## TODO-s and known issues:
 1. Toggle sound
 2. Leaderboard
-
-## Known issues:
-* The game doesn't resize to fit the landscape mode on smaller devices.
+3. The game doesn't resize to fit the landscape mode on smaller devices.
+4. For now the game is unplayable on Internet Explorer.
