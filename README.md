@@ -15,7 +15,7 @@ Live version: https://ewastasiak.github.io/fend-project-memory-game-master/
 <a href="https://www.youtube.com/watch?v=tpz21UFG0Ko">"Elevator Ride to Hell"</a> by Adam Monroe and Adam Kopciński
 
 ## License:
-* <a href="https://github.com/ewastasiak/fend-project-memory-game-master/blob/master/LICENSE">MIT</a>
+<a href="https://github.com/ewastasiak/fend-project-memory-game-master/blob/master/LICENSE">MIT</a>
 
 ## TODO-s and known issues:
 1. Toggle sound
