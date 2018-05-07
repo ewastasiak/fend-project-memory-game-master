@@ -120,7 +120,9 @@ function setup() {
   let timer = document.getElementById('timer');
   let seconds = document.getElementById('secs');
   let minutes = document.getElementById('mins');
-  let time;
+  let timeSec = seconds;
+  let timeMin = minutes;
+
 
 
   // timer.innerHTML = `${stringMins} :000 ${stringSec}`;
@@ -284,8 +286,10 @@ function setup() {
     // haltTimer();
 
     function timeCountStop() {
-
     clearInterval(time);
+    let time = 0;
+    let timeSec = 0;
+    let timeMin = 0;
     }
 
     timeCountStop();
