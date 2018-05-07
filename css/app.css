@@ -214,8 +214,8 @@ h2 {
 
     /* The Modal (background) */
 .modal {
-  /* display: none; */
-  display: block;
+  display: none;
+  /* display: block; */
   /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
