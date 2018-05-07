@@ -29,8 +29,6 @@ button {
 
 footer {
   color: grey;
-  font-family: 'Coda';
-  font-size: 0.8rem;
   text-align: center;
   margin: 1em;
 }
@@ -60,10 +58,10 @@ h2 {
 #timer {
   margin: 0.3em 0.2em;
   font-family: 'Poor Story', sans-serif;
-  font-size: 1.8em;
+  font-size: 2em;
   color: grey;
   position: fixed;
-  right: 0px;
+  right: 0;
   text-align: left;
   display: inline-block;
 }
@@ -201,9 +199,10 @@ h2 {
 
 /* TODO: toggle sound function*/
 /* .fa-volume-up,
-.fa-volume-off {
+  .fa-volume-off {
   margin-left: 40px;
-  } */
+  }
+*/
 
 
 /*
@@ -234,10 +233,11 @@ h2 {
   align-items: center;
   background: linear-gradient(130deg, #ace 0%, #fb4 70%);
   box-shadow: 0 0 20px 5px #ace;
-  font-family: 'Poor Story', sans-serif;
+  /* font-family: 'Poor Story', sans-serif; */
+  font: 1.5em 'Poor Story', sans-serif;
   color: #000;
   font-weight: 800;
-  font-size: 1.5em;
+  /* font-size: 1.5em; */
   text-align: center;
   margin: auto;
   padding: 20px;
@@ -271,10 +271,8 @@ h2 {
 @media screen and (max-width: 560px) {
 
    h1 {
-     font-family: 'Poor Story', sans-serif;
+     font: 2em 'Poor Story', sans-serif;
      color: #fff;
-     font-weight: 500;
-     font-size: 2em;
    }
 
    .deck {
