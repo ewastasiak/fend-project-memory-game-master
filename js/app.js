@@ -1,21 +1,16 @@
 document.addEventListener("DOMContentLoaded", setup);
 
+// Get stars
+const starTwo = document.getElementById("star-two");
+const starThree = document.getElementById("star-three");
 
 // Music
 const audio = new Audio("sfx/elevator-monroe-kopcinski.mp3");
 audio.volume = 0.2;
-
 document.querySelector("body").addEventListener("click", playAudio);
 const soundIcon = document.getElementById("sound");
 
-// Get stars
-const starTwo = document.getElementById('star-two');
-const starThree = document.getElementById('star-three');
-
-
-
-
-//TODO: make this work
+//TODO: toggle Audio;
 // 	function toggleAudio() {
 // 		if (playAudio()) {
 // 	  return audio.paused ? playAudio() : pauseAudio()
@@ -27,52 +22,30 @@ const starThree = document.getElementById('star-three');
 //   audio.pause();
 // }
 
-
 function playAudio() {
   audio.loop = true;
   audio.play();
 }
 
-
-  //timer
-
-  let timer = document.getElementById('timer');
-  let seconds = document.getElementById('secs');
-  let minutes = document.getElementById('mins');
-  let timeSec = seconds;
-  let timeMin = minutes;
-  // let time = 0;
-
-
-
-  // timer.innerHTML = `${stringMins} :000 ${stringSec}`;
-  // timer.innerHTML = 0;
-  // timer.innerHTML = `${minutes.innerHTML}:${seconds.innerHTML}`;
-
-  // seconds.innerHTML = 00;
-  // minutes.innerHTML = 00;
-
-
-
-  // let stringSec = seconds.toString();
-  // let stringMins = minutes.toString();
-  // let timeToString = `${stringMins}:${stringSec}`;
-  // let timer = timeToString;
-
+//timer
+let timer = document.getElementById("timer");
+let seconds = document.getElementById("secs");
+let minutes = document.getElementById("mins");
+let timeSec = seconds;
+let timeMin = minutes;
 
 //timer
-  function timeCount() {
+function timeCount() {
   timer = setInterval(function() {
     seconds.innerHTML++;
-  if (seconds.innerHTML == 60) {
-    minutes.innerHTML++;
-    seconds.innerHTML = 0;
-  }
+    if (seconds.innerHTML == 60) {
+      minutes.innerHTML++;
+      seconds.innerHTML = 0;
+    }
   }, 1000);
-  }
+}
 
 function setup() {
-
   const deckRef = document.getElementsByClassName("deck")[0];
   let firstClick = true;
   // create an array of cards
@@ -109,9 +82,7 @@ function setup() {
   function makeList() {
     deckRef.innerHTML = "";
     for (let i = 0; i < cardsArr.length; i++) {
-      deckRef.innerHTML += `<li class=\"card\"><i class=\"${
-        cardsArr[i]
-      }\"></i></li>`;
+      deckRef.innerHTML += `<li class=\"card\"><i class=\"${cardsArr[i]}\"></i></li>`;
     }
 
     let shuffledArray = shuffle(cardsArr);
@@ -145,14 +116,9 @@ function setup() {
   //Open a card on click
   const cardsObjs = deckRef.children;
   for (let i = 0; i < cardsObjs.length; i++) {
-  // add event listeners to cards
+    // add event listeners to cards
     cardsObjs[i].addEventListener("click", isOpen);
   }
-
-
-
-
-
 
   function isOpen() {
     if (firstClick === true) {
@@ -178,7 +144,7 @@ function setup() {
 
   function isMatched() {
     let compareArr = openCardArr;
-  //  console.log("a pair is matched");
+    //  console.log("a pair is matched");
     for (let i = 0; i < compareArr.length; i++) {
       compareArr[i].classList.add("match");
       matchedCardArr.push("card.li");
@@ -196,17 +162,17 @@ function setup() {
     let compareArr = openCardArr;
     //compare the icon classes
     if (compareArr[0].innerHTML === compareArr[1].innerHTML) {
-     // console.log("compared cards are the same");
+      // console.log("compared cards are the same");
       isMatched();
     } else {
-     // console.log("compared cards are not the same");
+      // console.log("compared cards are not the same");
       let cardsClassOut = compareArr;
 
       for (let i = 0; i < compareArr.length; i++) {
         let compareArr = cardsClassOut[i];
 
         cardsClassOut[i].classList.remove("show", "open");
-     //   console.log("remove the class");
+        //   console.log("remove the class");
       }
     }
 
@@ -231,80 +197,64 @@ function setup() {
     modalRating.innerHTML = `<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>`;
 
     if (movesNum === 1) {
-    movesWord.innerHTML = " move";
+      movesWord.innerHTML = " move";
     }
 
     if (movesNum === 2) {
       movesRef.innerHTML = 2;
       movesWord.innerHTML = " moves";
-
     }
     // Rating change
     if (movesNum > 15) {
-      starThree.className = 'fa fa-star-o';
+      starThree.className = "fa fa-star-o";
       modalRating.innerHTML = `<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>`;
     }
 
     if (movesNum > 23) {
-      starTwo.className = 'fa fa-star-o';
+      starTwo.className = "fa fa-star-o";
       modalRating.innerHTML = `<i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>`;
     }
   }
 
-    //MODAL CONTENT
-    const modalMoves = document.getElementById("moves");
-    const modalTime = document.getElementById("time");
-    const modalRating = document.getElementById("rating");
+  //MODAL CONTENT
+  const modalMoves = document.getElementById("moves");
+  const modalTime = document.getElementById("time");
+  const modalRating = document.getElementById("rating");
 
-  // TODO: reset everything
+  // reset everything
   function resetGame() {
     modal.style.display = "none";
     deckRef.innerHTML = "";
-    starThree.className = 'fa fa-star';
-    starTwo.className = 'fa fa-star';
+    starThree.className = "fa fa-star";
+    starTwo.className = "fa fa-star";
 
     setup();
 
     //reset Array
     let openCardArr = [];
     let matchedCardArr = [];
-    //moves
-    // movesNum = 0;
-    // movesRef.innerHTML = 0;
-
-    //TODO:  timer
   }
 
   function endOfGame() {
-
-let finalMin = minutes.innerHTML;
-let finalSec = seconds.innerHTML;
+    let finalMin = minutes.innerHTML;
+    let finalSec = seconds.innerHTML;
 
     function timeCountStop() {
-    clearInterval(timer);
-
-seconds.innerHTML = 0;
-minutes.innerHTML = 0;
+      clearInterval(timer);
+      seconds.innerHTML = 0;
+      minutes.innerHTML = 0;
     }
 
     timeCountStop();
-
-
 
     modal.style.display = "block";
     const finalMovesNum = movesNum;
     modalMoves.innerHTML = `It took you ${finalMovesNum} moves`;
     const finalTime = `${finalMin}:${finalSec}`;
     modalTime.innerHTML = `Your time was ${finalTime}`;
-
-    //TODO:
-    // haltTimer();
-
-
-
   }
 
-  // template taken from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
+  // modal template taken from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
   //TODO: leaderboard modal
   // Get the modal
   const modal = document.getElementById("myModal");
@@ -319,6 +269,4 @@ minutes.innerHTML = 0;
       modal.style.display = "none";
     }
   };
-
-
 }
