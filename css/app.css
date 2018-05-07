@@ -187,7 +187,6 @@ h2 {
 .score-panel .stars li {
   list-style: none;
   display: inline-block;
-  margin: 1em;
 }
 
 /* .score-panel .restart {
