@@ -4,6 +4,8 @@
 
 Live version: https://ewastasiak.github.io/fend-project-memory-game-master/
 
+Assignment's starter code: https://github.com/udacity/fend-project-memory-game
+
 ## Game rules:
 
 * While playing, you reveal pairs of cards by clicking on them. The ones that don't match - get back to the initial state (face down).
@@ -18,7 +20,6 @@ Live version: https://ewastasiak.github.io/fend-project-memory-game-master/
 <a href="https://github.com/ewastasiak/fend-project-memory-game-master/blob/master/LICENSE">MIT</a>
 
 ## TODO-s and known issues:
-0. (Urgent) Fix timer format.
 1. Add toggle sound.
 2. Add leaderboard.
 3. Add landscape mode breakpoint for smaller devices.
