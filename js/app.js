@@ -31,13 +31,21 @@ function playAudio() {
 let timer = document.getElementById("timer");
 let seconds = document.getElementById("secs");
 let minutes = document.getElementById("mins");
-let timeSec = seconds;
-let timeMin = minutes;
+
+//fix the timer format display (00:00)
+let zeroMin = document.getElementsByClassName("zero-min")[0];
+let zeroSec = document.getElementsByClassName("zero-sec")[0];
+
 
 //timer
 function timeCount() {
   timer = setInterval(function() {
     seconds.innerHTML++;
+
+    //fix the timer format display (00:00)
+    (minutes.innerHTML < 10 ? zeroMin.innerHTML = 0 : zeroMin.innerHTML = "");
+    (seconds.innerHTML < 10 || seconds.innerHTML == 60 ? zeroSec.innerHTML = 0 : zeroSec.innerHTML = "");
+
     if (seconds.innerHTML == 60) {
       minutes.innerHTML++;
       seconds.innerHTML = 0;
