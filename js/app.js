@@ -253,11 +253,14 @@ function setup() {
     clearInterval(timer);
     seconds.innerHTML = 0;
     minutes.innerHTML = 0;
+    //Keep 00:00 timer format
+    zeroMin.innerHTML = 0;
+    zeroSec.innerHTML = 0;
   }
 
   function endOfGame() {
-    let finalMin = minutes.innerHTML;
-    let finalSec = seconds.innerHTML;
+    let finalMin = zeroMin.innerHTML + minutes.innerHTML;
+    let finalSec = zeroSec.innerHTML + seconds.innerHTML;
 
     timeCountStop();
 
